@@ -38,19 +38,51 @@
 
 ### ②「開発用証明書(.cer)」の作成
 
-* ここから[Apple Developer Programのメンバーセンター](https://developer.apple.com/account/)にログインして作業を行います
 
-<center><img src="readme-img/i005.png" alt="画像i5" width="450px"></center>
+左メニューのCertificatesを開き、Certificatesの隣にある+ボタンをクリックすると、
+Create a New Certificateの画面が開きます。
 
-* 開発用証明書(.cer)を作成します　__※初回利用時のみ__
-  * __注意__：開発用証明書(.cer)ファイルは既に作成したものがあれば、新しく作成しないでください！必ず既存のものを使用します。複数作成してしまうとファイル名が同じであるため区別できなくなり失敗につながる恐れがあります。
-* 「Certificates」＞「All」＞右上の「＋」をクリックして、「iOS App Development」にチェックをいれます
+<img src="/Users/vfa.trucltt/Repository/iOS_Certificate/readme-img/setupapns03.png" width="90%" alt="Member Centerを開く">
 
-<center><img src="readme-img/i006.png" alt="画像i6" width="350px"></center>
-<center><img src="readme-img/i007.png" alt="画像i7" width="400px"></center>
-<center><img src="readme-img/i008.png" alt="画像i8" width="300px"></center>
+証明書の作成画面が表示されるので、下の方にあるServicesの項目にある必要なAPNs証明書を選択してください。
 
-<div style="page-break-before:always"></div>
+ - iOS Apple Push Notification service SSL (Sandbox)：開発用のプッシュ通知証明書
+ - Apple Push Notification service SSL (Sandbox & Production)：本番用のプッシュ通知証明書
+
+なお、リリースされるアプリ(本番用アプリ)に対して開発用証明書を設定した場合、invalidTokenが発生してしまいますのでご注意ください。
+※invalidTokenについては[こちら](https://lp.mbaas.nifcloud.com/mb_push-trouble-shooting_thanks.html)
+
+- 開発用：Apple Push Notification service SSL (Sandbox) を選択
+
+<img src="/Users/vfa.trucltt/Repository/iOS_Certificate/readme-img/setupapns04_dev.png" width="90%" alt="開発用証明書を選択">
+
+- 本番用：Apple Push Notification service SSL (Sandbox & Production) を選択
+ - 本来は開発用と本番用を兼ねた証明書ですが、ニフクラ mobile backendに設定する場合は本番用として設定してください。
+
+<img src="/Users/vfa.trucltt/Repository/iOS_Certificate/readme-img/setupapns04_pro.png" width="90%" alt="本番用証明書を選択">
+
+どのアプリに紐づいた証明書を作成するのか選択する必要があります。
+下のプルダウンメニューにAppleに登録されたアプリの一覧が表示されるので、
+証明書を作成するアプリを選択してください。
+
+<img src="/Users/vfa.trucltt/Repository/iOS_Certificate/readme-img/setupapns05.png" width="90%" alt="Member Centerを開く">
+
+次の画面では、CSRファイルを選択する必要がありますので、CSRファイルについて説明して行きます。
+
+CSRファイルは、開発者証明書を登録する際に既に作成済みの場合、再度作成する必要がありません。
+まだ作成されていない場合、以下の手順でキーチェーンアクセスから作成します。
+キーチェーンアクセスのメニューから証明書アシスタント＞認証局に証明書を要求...を選択します。
+
+<img src="/Users/vfa.trucltt/Repository/iOS_Certificate/readme-img/setupapns08.png" width="90%" alt="Member Centerを開く">
+
+メールアドレスと通称を設定し、ディスクに保存を選択して、続けるボタンをクリックします。
+CSRファイルの保存場所を決めて、保存してください。
+
+<img src="/Users/vfa.trucltt/Repository/iOS_Certificate/readme-img/setupapns09.png" width="90%" alt="Member Centerを開く">
+
+証明書作成画面に戻り、CSRファイルをアップロードしてください。
+
+<img src="/Users/vfa.trucltt/Repository/iOS_Certificate/readme-img/setupapns06.png" width="90%" alt="Member Centerを開く">
 
 ### ③「AppID」の作成
 * AppID を作成します
