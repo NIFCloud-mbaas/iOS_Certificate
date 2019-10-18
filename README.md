@@ -42,7 +42,7 @@
 左メニューのCertificatesを開き、Certificatesの隣にある+ボタンをクリックすると、
 Create a New Certificateの画面が開きます。
 
-<img src="/Users/vfa.trucltt/Repository/iOS_Certificate/readme-img/setupapns03.png" width="90%" alt="Member Centerを開く">
+<img src="readme-img/setupapns03.png" width="90%" alt="Member Centerを開く">
 
 証明書の作成画面が表示されるので、下の方にあるServicesの項目にある必要なAPNs証明書を選択してください。
 
@@ -54,18 +54,18 @@ Create a New Certificateの画面が開きます。
 
 - 開発用：Apple Push Notification service SSL (Sandbox) を選択
 
-<img src="/Users/vfa.trucltt/Repository/iOS_Certificate/readme-img/setupapns04_dev.png" width="90%" alt="開発用証明書を選択">
+<img src="readme-img/setupapns04_dev.png" width="90%" alt="開発用証明書を選択">
 
 - 本番用：Apple Push Notification service SSL (Sandbox & Production) を選択
  - 本来は開発用と本番用を兼ねた証明書ですが、ニフクラ mobile backendに設定する場合は本番用として設定してください。
 
-<img src="/Users/vfa.trucltt/Repository/iOS_Certificate/readme-img/setupapns04_pro.png" width="90%" alt="本番用証明書を選択">
+<img src="readme-img/setupapns04_pro.png" width="90%" alt="本番用証明書を選択">
 
 どのアプリに紐づいた証明書を作成するのか選択する必要があります。
 下のプルダウンメニューにAppleに登録されたアプリの一覧が表示されるので、
 証明書を作成するアプリを選択してください。
 
-<img src="/Users/vfa.trucltt/Repository/iOS_Certificate/readme-img/setupapns05.png" width="90%" alt="Member Centerを開く">
+<img src="readme-img/setupapns05.png" width="90%" alt="Member Centerを開く">
 
 次の画面では、CSRファイルを選択する必要がありますので、CSRファイルについて説明して行きます。
 
@@ -73,16 +73,16 @@ CSRファイルは、開発者証明書を登録する際に既に作成済み�
 まだ作成されていない場合、以下の手順でキーチェーンアクセスから作成します。
 キーチェーンアクセスのメニューから証明書アシスタント＞認証局に証明書を要求...を選択します。
 
-<img src="/Users/vfa.trucltt/Repository/iOS_Certificate/readme-img/setupapns08.png" width="90%" alt="Member Centerを開く">
+<img src="readme-img/setupapns08.png" width="90%" alt="Member Centerを開く">
 
 メールアドレスと通称を設定し、ディスクに保存を選択して、続けるボタンをクリックします。
 CSRファイルの保存場所を決めて、保存してください。
 
-<img src="/Users/vfa.trucltt/Repository/iOS_Certificate/readme-img/setupapns09.png" width="90%" alt="Member Centerを開く">
+<img src="readme-img/setupapns09.png" width="90%" alt="Member Centerを開く">
 
 証明書作成画面に戻り、CSRファイルをアップロードしてください。
 
-<img src="/Users/vfa.trucltt/Repository/iOS_Certificate/readme-img/setupapns06.png" width="90%" alt="Member Centerを開く">
+<img src="readme-img/setupapns06.png" width="90%" alt="Member Centerを開く">
 
 ### ③「AppID」の作成
 * AppID を作成します
