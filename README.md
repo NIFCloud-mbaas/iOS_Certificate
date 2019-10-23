@@ -89,8 +89,6 @@ CSRファイルの保存場所を決めて、保存してください。
 * 「Identifiers」＞「App IDs」＞右上の「＋」をクリックします
 
 <center><img src="readme-img/i009.png" alt="画像i9" width="400px"></center>
-<center><img src="readme-img/i010.png" alt="画像i10" width="450px"></center>
-<center><img src="readme-img/i011.png" alt="画像i11" width="400px"></center>
 <center><img src="readme-img/i012.png" alt="画像i12" width="400px"></center>
 
 ### ④「端末の登録」
