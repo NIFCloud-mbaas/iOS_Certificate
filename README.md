@@ -88,24 +88,25 @@ CSRファイルの保存場所を決めて、保存してください。
 * AppID を作成します
 * 「Identifiers」＞「App IDs」＞右上の「＋」をクリックします
 
-<center><img src="readme-img/i009.png" alt="画像i9" width="400px"></center>
-<center><img src="readme-img/i012.png" alt="画像i12" width="400px"></center>
+<center><img src="readme-img/i009.png" alt="画像i9" width="90%"></center>
+<center><img src="readme-img/i010.png" alt="画像i10" width="90%"></center>
+<center><img src="readme-img/i012.png" alt="画像i12" width="90%"></center>
 
 ### ④「端末の登録」
 * 動作確認で使用する端末の登録をします
   * 既に登録済みの場合、この作業は不要です
 * 「Devices」＞「All」＞右上の「＋」をクリックします
 
-<center><img src="readme-img/i013.png" alt="画像i13" width="400px"></center>
+<center><img src="readme-img/i013.png" alt="画像i13" width="90%"></center>
 
 * UDIDは下記のいずれかの方法で調べることができます
 
-<center><img src="readme-img/i014.png" alt="画像i14" width="500px"></center>
-<center><img src="readme-img/i015.png" alt="画像i15" width="500px"></center>
+<center><img src="readme-img/i014.png" alt="画像i14" width="90%"></center>
+<center><img src="readme-img/i015.png" alt="画像i15" width="90%"></center>
 
 * 先ほどの入力欄に調べたUDIDをコピーして貼り付け、「Continue」をクリックします
 
-<center><img src="readme-img/i016.png" alt="画像i16" width="400px"></center>
+<center><img src="readme-img/i016.png" alt="画像i16" width="90%"></center>
 
 <div style="page-break-before:always"></div>
 
@@ -113,10 +114,10 @@ CSRファイルの保存場所を決めて、保存してください。
 * プロビジョニングプロファイルを作成します
 * 「Provisioning Profiles」＞「All」＞右上の「＋」をクリックします
 
-<center><img src="readme-img/i017.png" alt="画像i17" width="450px"></center>
-<center><img src="readme-img/i018.png" alt="画像i18" width="450px"></center>
-<center><img src="readme-img/i019.png" alt="画像i19" width="300px"></center>
-<center><img src="readme-img/i020.png" alt="画像i20" width="400px"></center>
+<center><img src="readme-img/i017.png" alt="画像i17" width="90%"></center>
+<center><img src="readme-img/i018.png" alt="画像i18" width="90%"></center>
+<center><img src="readme-img/i019.png" alt="画像i19" width="90%"></center>
+<center><img src="readme-img/i020.png" alt="画像i20" width="90%"></center>
 
 ### ⑥「APNs用証明書(.cer)s」の作成
 * APNs用証明書(.cer)を作成します
