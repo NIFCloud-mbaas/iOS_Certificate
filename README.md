@@ -1,5 +1,5 @@
 # 【iOS】プッシュ通知の受信に必要な証明書の作り方(開発用)
-*2016/09/28作成(2017/09/13更新)*
+*2016/09/28作成(2019/10/15更新)*
 <br><br>
 アプリにプッシュ通知を組み込む際、必要な証明書の作り方を解説します。
 
@@ -38,44 +38,75 @@
 
 ### ②「開発用証明書(.cer)」の作成
 
-* ここから[Apple Developer Programのメンバーセンター](https://developer.apple.com/account/)にログインして作業を行います
 
-<center><img src="readme-img/i005.png" alt="画像i5" width="450px"></center>
+左メニューのCertificatesを開き、Certificatesの隣にある+ボタンをクリックすると、
+Create a New Certificateの画面が開きます。
 
-* 開発用証明書(.cer)を作成します　__※初回利用時のみ__
-  * __注意__：開発用証明書(.cer)ファイルは既に作成したものがあれば、新しく作成しないでください！必ず既存のものを使用します。複数作成してしまうとファイル名が同じであるため区別できなくなり失敗につながる恐れがあります。
-* 「Certificates」＞「All」＞右上の「＋」をクリックして、「iOS App Development」にチェックをいれます
+<img src="readme-img/setupapns03.png" width="90%" alt="Member Centerを開く">
 
-<center><img src="readme-img/i006.png" alt="画像i6" width="350px"></center>
-<center><img src="readme-img/i007.png" alt="画像i7" width="400px"></center>
-<center><img src="readme-img/i008.png" alt="画像i8" width="300px"></center>
+証明書の作成画面が表示されるので、下の方にあるServicesの項目にある必要なAPNs証明書を選択してください。
 
-<div style="page-break-before:always"></div>
+ - iOS Apple Push Notification service SSL (Sandbox)：開発用のプッシュ通知証明書
+ - Apple Push Notification service SSL (Sandbox & Production)：本番用のプッシュ通知証明書
+
+なお、リリースされるアプリ(本番用アプリ)に対して開発用証明書を設定した場合、invalidTokenが発生してしまいますのでご注意ください。
+※invalidTokenについては[こちら](https://lp.mbaas.nifcloud.com/mb_push-trouble-shooting_thanks.html)
+
+- 開発用：Apple Push Notification service SSL (Sandbox) を選択
+
+<img src="readme-img/setupapns04_dev.png" width="90%" alt="開発用証明書を選択">
+
+- 本番用：Apple Push Notification service SSL (Sandbox & Production) を選択
+ - 本来は開発用と本番用を兼ねた証明書ですが、ニフクラ mobile backendに設定する場合は本番用として設定してください。
+
+<img src="readme-img/setupapns04_pro.png" width="90%" alt="本番用証明書を選択">
+
+どのアプリに紐づいた証明書を作成するのか選択する必要があります。
+下のプルダウンメニューにAppleに登録されたアプリの一覧が表示されるので、
+証明書を作成するアプリを選択してください。
+
+<img src="readme-img/setupapns05.png" width="90%" alt="Member Centerを開く">
+
+次の画面では、CSRファイルを選択する必要がありますので、CSRファイルについて説明して行きます。
+
+CSRファイルは、開発者証明書を登録する際に既に作成済みの場合、再度作成する必要がありません。
+まだ作成されていない場合、以下の手順でキーチェーンアクセスから作成します。
+キーチェーンアクセスのメニューから証明書アシスタント＞認証局に証明書を要求...を選択します。
+
+<img src="readme-img/setupapns08.png" width="90%" alt="Member Centerを開く">
+
+メールアドレスと通称を設定し、ディスクに保存を選択して、続けるボタンをクリックします。
+CSRファイルの保存場所を決めて、保存してください。
+
+<img src="readme-img/setupapns09.png" width="90%" alt="Member Centerを開く">
+
+証明書作成画面に戻り、CSRファイルをアップロードしてください。
+
+<img src="readme-img/setupapns06.png" width="90%" alt="Member Centerを開く">
 
 ### ③「AppID」の作成
 * AppID を作成します
 * 「Identifiers」＞「App IDs」＞右上の「＋」をクリックします
 
-<center><img src="readme-img/i009.png" alt="画像i9" width="400px"></center>
-<center><img src="readme-img/i010.png" alt="画像i10" width="450px"></center>
-<center><img src="readme-img/i011.png" alt="画像i11" width="400px"></center>
-<center><img src="readme-img/i012.png" alt="画像i12" width="400px"></center>
+<center><img src="readme-img/i009.png" alt="画像i9" width="90%"></center>
+<center><img src="readme-img/i010.png" alt="画像i10" width="90%"></center>
+<center><img src="readme-img/i012.png" alt="画像i12" width="90%"></center>
 
 ### ④「端末の登録」
 * 動作確認で使用する端末の登録をします
   * 既に登録済みの場合、この作業は不要です
 * 「Devices」＞「All」＞右上の「＋」をクリックします
 
-<center><img src="readme-img/i013.png" alt="画像i13" width="400px"></center>
+<center><img src="readme-img/i013.png" alt="画像i13" width="90%"></center>
 
 * UDIDは下記のいずれかの方法で調べることができます
 
-<center><img src="readme-img/i014.png" alt="画像i14" width="500px"></center>
-<center><img src="readme-img/i015.png" alt="画像i15" width="500px"></center>
+<center><img src="readme-img/i014.png" alt="画像i14" width="90%"></center>
+<center><img src="readme-img/i015.png" alt="画像i15" width="90%"></center>
 
 * 先ほどの入力欄に調べたUDIDをコピーして貼り付け、「Continue」をクリックします
 
-<center><img src="readme-img/i016.png" alt="画像i16" width="400px"></center>
+<center><img src="readme-img/i016.png" alt="画像i16" width="90%"></center>
 
 <div style="page-break-before:always"></div>
 
@@ -83,10 +114,10 @@
 * プロビジョニングプロファイルを作成します
 * 「Provisioning Profiles」＞「All」＞右上の「＋」をクリックします
 
-<center><img src="readme-img/i017.png" alt="画像i17" width="450px"></center>
-<center><img src="readme-img/i018.png" alt="画像i18" width="450px"></center>
-<center><img src="readme-img/i019.png" alt="画像i19" width="300px"></center>
-<center><img src="readme-img/i020.png" alt="画像i20" width="400px"></center>
+<center><img src="readme-img/i017.png" alt="画像i17" width="90%"></center>
+<center><img src="readme-img/i018.png" alt="画像i18" width="90%"></center>
+<center><img src="readme-img/i019.png" alt="画像i19" width="90%"></center>
+<center><img src="readme-img/i020.png" alt="画像i20" width="90%"></center>
 
 ### ⑥「APNs用証明書(.cer)s」の作成
 * APNs用証明書(.cer)を作成します
